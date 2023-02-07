@@ -1,0 +1,65 @@
+<div id="deploy" class="umb-deploy" ng-controller="UmbracoDeploy.DashboardController as vm">
+
+    <umb-editor-sub-header>
+
+        <umb-editor-sub-header-content-left>
+            <div ng-show="false">
+                Your message level: {{vm.feedbackMessageLevel}}
+            </div>
+            <div ng-if="vm.config.IsTrial">
+                <div style="display: inline-block; font-size: 18px; padding-right: 5px">
+                    <p ng-if="vm.config.TrialExpireInDays > 1">Trial expires in <b>{{ vm.config.TrialExpireInDays | number:0 }} days</b></p>
+                    <p ng-if="vm.config.TrialExpireInDays > 0 && vm.config.TrialExpireInDays < 1">Trial expires <b>today!</b></p>
+                    <p ng-if="vm.config.TrialExpireInDays < 0" style="color: #F02E28"><b>Trial expired</b></p>
+                </div>
+
+                <div style="display: inline-block;">
+                    <umb-button type="button"
+                                button-style="success"
+                                label="Upgrade now"
+                                action="vm.openPayment()">
+                    </umb-button>
+                </div>
+            </div>
+        </umb-editor-sub-header-content-left>
+
+        <umb-editor-sub-header-content-right>
+            <umb-button type="button"
+                        button-style="link"
+                        label-key="sections_deployOpenPortal"
+                        icon="icon-umb-deploy"
+                        action="vm.openProject()">
+            </umb-button>
+
+            <div class="btn-group umb-button-group">
+
+                <umb-button type="button"
+                            button-style="link"
+                            label-key="sections_deployHelpAndDocumentation"
+                            icon="icon-help-alt"
+                            action="vm.openDocumentation()">
+                </umb-button>
+
+                    <umb-button
+                        type="button"
+                        button-style="white"
+                        action="vm.dropDownOpen = !vm.dropDownOpen"
+                        label="...">
+                    </umb-button>
+                
+                    <umb-dropdown ng-if="vm.dropDownOpen" on-close="vm.dropDownOpen = false" class="pull-right">
+                        <umb-dropdown-item><a target="_blank" href="https://our.umbraco.org/Documentation/Umbraco-Cloud/Getting-Started/"><localization key="sections_deployGettingStarted">Getting Started</localization></a></umb-dropdown-item>
+                        <umb-dropdown-item><a target="_blank" href="https://our.umbraco.org/Documentation/Umbraco-Cloud/Set-Up/"><localization key="sections_deploySetupProject">Set up a Project</localization></a></umb-dropdown-item>
+                        <umb-dropdown-item><a target="_blank" href="https://our.umbraco.org/Documentation/Umbraco-Cloud/Deployment/"><localization key="sections_deployDeployment">Deployment</localization></a></umb-dropdown-item>
+                        <umb-dropdown-item><a target="_blank" href="https://our.umbraco.org/Documentation/Umbraco-Cloud/Troubleshooting/"><localization key="sections_deployTroubleshooting">Troubleshooting</localization></a></umb-dropdown-item>
+                    </umb-dropdown>
+                
+            </div>
+
+        </umb-editor-sub-header-content-right>
+
+    </umb-editor-sub-header>
+
+    <ud-content-flow allow-manage-workspaces="true"></ud-content-flow>
+
+</div>
