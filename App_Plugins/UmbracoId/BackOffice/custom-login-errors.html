@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign in to Umbraco Cloud</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="locale" content="en-US">
+    <meta name="ROBOTS" content="NONE, NOARCHIVE">
+    <meta name="GOOGLEBOT" content="NOARCHIVE">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="/App_Plugins/UmbracoId/BackOffice/assets/css/style.css?v=1" data-preload="true">
+    <style>
+        @font-face {
+            font-family: Lato;
+            src: local("LatoLatin Regular"), local("LatoLatin-Regular"), url(/umbraco/assets/fonts/lato/LatoLatin-Regular.woff2) format("woff2");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            text-rendering: optimizeLegibility;
+        }
+
+        @font-face {
+            font-family: Lato;
+            src: local("LatoLatin Bold"), local("LatoLatin-Bold"), url(/umbraco/assets/fonts/lato/LatoLatin-Bold.woff2) format("woff2");
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            text-rendering: optimizeLegibility;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-page unified_container">
+        <div class="login">
+            <div class="login__logo logo">
+                <img src="/App_Plugins/UmbracoId/BackOffice/assets/images/logo-horizontal.svg" alt="Umbraco Cloud" />
+            </div>
+
+            <div class="login__box">
+                <div id="api" class="login__content">
+                    <form>
+                        <h1>Login failed</h1>
+                        <div class="entry">
+                            <div class="entry-item">
+                                <p>##errors##</p>
+                                <p>Current logged in user: ##currentuser##</p>
+                            </div>
+                            <div class="buttons">
+                                <a class="button" id="login" href="/umbraco/">Retry login</a>
+                                <a class="button" id="logout" href="##signouturl##">Sign out</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="forgot-password login__help">
+                    <a id="forgotPassword" href="/umbraco/backoffice/UmbracoIdChallenge/PasswordReset">Reset password</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+</html>
