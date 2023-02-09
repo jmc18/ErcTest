@@ -1,0 +1,45 @@
+﻿<div>
+    <form method="POST" ng-submit="vm.submitLoginForm($event)" action="{{vm.externalLoginFormAction}}">
+        <button type="submit"
+                class="btn btn-block btn-social"
+                ng-class="vm.login.properties.SocialStyle"
+                id="{{vm.login.authType}}"
+                name="provider"
+                value="{{vm.login.authType}}"
+                title="Log in using your {{vm.login.caption}} account">
+            <i class="fa" ng-class="vm.login.properties.SocialIcon"></i>
+            <localize key="login_signInWith">Sign in with</localize>&nbsp;{{vm.login.caption}}
+        </button>
+    </form>
+    <div ng-if="vm.errors">
+        <div class="text-error" ng-repeat="error in vm.errors">
+            <span>{{error}}</span>
+        </div>
+    </div>
+    <div ng-if="vm.popupError">
+        <p class="text-error">
+            The Umbraco ID popup window was blocked.
+        </p>
+        <p>
+            Ensure that popup windows are allowed for this site and <strong><a href="#" ng-click="vm.submitLoginForm($event)">Try Again</a></strong>.
+        </p>
+        <form method="POST" name="vm.navigateLoginForm" ng-submit="vm.navigateToLoginForm($event)" action="{{vm.externalLoginFormAction}}">
+            <p>
+                Otherwise click <button type="submit" name="provider"
+                                        value="{{vm.login.authType}}"
+                                        style="background: none!important;
+                                            border: none;
+                                            padding: 0!important;
+                                            cursor: pointer;
+                                            margin: 0;
+                                            font-size: inherit;
+                                            font-weight: bold;
+                                            line-height: inherit;
+                                            font-family: inherit;
+                                            vertical-align: inherit;">
+                    Here
+                </button> to navigate to the login page without the popup window.
+            </p>
+        </form>
+    </div>
+</div>
