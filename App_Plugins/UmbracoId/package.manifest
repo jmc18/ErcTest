@@ -1,9 +1,0 @@
-{
-    "javascript": [
-        "~/App_Plugins/UmbracoId/BackOffice/customlogin.controller.js",
-        "~/App_Plugins/UmbracoId/BackOffice/umbidlogin.component.js"
-    ],
-    "css": [
-        "~/App_Plugins/UmbracoId/BackOffice/UmbracoId.css"
-    ]
-}

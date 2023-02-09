@@ -1,0 +1,22 @@
+<div>
+    <ul class="unstyled list-icons" ng-if="node">
+        <li>
+
+            <a href="" ng-click="clear()">
+                <i class="icon icon-trash hover-show pull-right" aria-hidden="true"></i>
+            </a>
+
+            <i class="icon {{node.icon}} hover-hide" aria-hidden="true"></i>
+
+            <a href prevent-default ng-click="openContentPicker()">{{node.name}}</a>
+            <div class="umb-node-preview__description" ng-if="node.pathDescription">{{node.pathDescription}}</div>
+        </li>
+
+    </ul>
+
+    <a ng-if="!node" href ng-click="openContentPicker()" prevent-default>
+        <localize key="general_choose">Choose a node</localize>...
+    </a>
+
+
+</div>
